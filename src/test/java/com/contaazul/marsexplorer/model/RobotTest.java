@@ -9,14 +9,12 @@ public class RobotTest {
 	private Robot robot;
 	
 	@Before
-	public void canInstantiateRobot() throws Exception {
+	public void setupRobot() throws Exception {
 		robot = new Robot();
 	}
 	
 	@Test
 	public void robotAtOriginFacingNorth() throws Exception {
-		Robot robot = new Robot();
-
 		assertThat(robot.getX(), is(0));
 		assertThat(robot.getY(), is(0));
 		assertThat(robot.getBearing(), is("N"));

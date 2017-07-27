@@ -1,15 +1,17 @@
 package com.contaazul.marsexplorer.model;
 
+import enums.Bearing;
+
 public class Robot {
 	private Integer x;
 	private Integer y;
-	private String bearing;
+	private Bearing bearing;
 	
 	public Robot() {
-		this(0, 0, "N");
+		this(0, 0, Bearing.NORTH);
 	}
 	
-	public Robot(Integer x, Integer y, String bearing) {
+	public Robot(Integer x, Integer y, Bearing bearing) {
 		super();
 		
 		this.x = x;
@@ -33,11 +35,11 @@ public class Robot {
 		this.y = y;
 	}
 	
-	public String getBearing() {
+	public Bearing getBearing() {
 		return bearing;
 	}
 	
-	public void setBearing(String bearing) {
+	public void setBearing(Bearing bearing) {
 		this.bearing = bearing;
 	}
 }

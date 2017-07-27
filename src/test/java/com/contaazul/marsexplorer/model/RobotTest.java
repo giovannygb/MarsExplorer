@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
+import enums.Bearing;
+
 public class RobotTest {
 	private Robot robot;
 	
@@ -17,7 +19,7 @@ public class RobotTest {
 	public void robotAtOriginFacingNorth() throws Exception {
 		assertThat(robot.getX(), is(0));
 		assertThat(robot.getY(), is(0));
-		assertThat(robot.getBearing(), is("N"));
+		assertThat(robot.getBearing(), is(Bearing.NORTH));
 	}
 
 }

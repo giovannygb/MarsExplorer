@@ -17,6 +17,8 @@ public class RobotOperator {
 		if (robotOperation == RobotOperation.MOVE_FORWARD) {
 			if (robot.getBearing() == Bearing.NORTH) {
 				robot.setY(robot.getY() + 1);
+			} else if (robot.getBearing() == Bearing.EAST) {
+				robot.setX(robot.getX() + 1);
 			}
 		}
 		

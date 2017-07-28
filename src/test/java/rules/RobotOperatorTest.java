@@ -41,4 +41,16 @@ public class RobotOperatorTest {
 		assertThat(robot.getY(), is(1));
 		assertThat(robot.getBearing(), is(Bearing.NORTH));
 	}
+	
+	@Test
+	public void robotOperatorMoveRobotEastToX1Y0E() throws Exception {
+		Robot robot = new Robot(0, 0, Bearing.EAST);
+		robotOperator.setRobot(robot);
+		
+		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
+
+		assertThat(robot.getX(), is(1));
+		assertThat(robot.getY(), is(0));
+		assertThat(robot.getBearing(), is(Bearing.EAST));
+	}
 }

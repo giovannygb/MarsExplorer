@@ -36,9 +36,7 @@ public class RobotOperatorTest {
 		
 		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
 
-		assertThat(robot.getX(), is(0));
-		assertThat(robot.getY(), is(1));
-		assertThat(robot.getBearing(), is(Bearing.NORTH));
+		assertThatRobotIsAt(robot, 0, 1, Bearing.NORTH);
 	}
 
 	@Test
@@ -47,9 +45,7 @@ public class RobotOperatorTest {
 		
 		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
 
-		assertThat(robot.getX(), is(1));
-		assertThat(robot.getY(), is(0));
-		assertThat(robot.getBearing(), is(Bearing.EAST));
+		assertThatRobotIsAt(robot, 1, 0, Bearing.EAST);
 	}
 
 	@Test
@@ -58,9 +54,7 @@ public class RobotOperatorTest {
 		
 		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
 
-		assertThat(robot.getX(), is(0));
-		assertThat(robot.getY(), is(-1));
-		assertThat(robot.getBearing(), is(Bearing.SOUTH));
+		assertThatRobotIsAt(robot, 0, -1, Bearing.SOUTH);
 	}
 
 	@Test
@@ -69,9 +63,7 @@ public class RobotOperatorTest {
 		
 		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
 
-		assertThat(robot.getX(), is(-1));
-		assertThat(robot.getY(), is(0));
-		assertThat(robot.getBearing(), is(Bearing.WEST));
+		assertThatRobotIsAt(robot, -1, 0, Bearing.WEST);
 	}
 	
 	private Robot createAndSetupRobot(Bearing bearing) {
@@ -79,5 +71,11 @@ public class RobotOperatorTest {
 		robotOperator.setRobot(robot);
 		
 		return robot;
+	}
+	
+	private static void assertThatRobotIsAt(Robot robot, Integer x, Integer y, Bearing bearing) {
+		assertThat(robot.getX(), is(x));
+		assertThat(robot.getY(), is(y));
+		assertThat(robot.getBearing(), is(bearing));
 	}
 }

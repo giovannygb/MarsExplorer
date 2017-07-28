@@ -11,10 +11,12 @@ import com.contaazul.marsexplorer.rules.RobotOperator;
 
 public class RobotOperatorTest {
 	private RobotOperator robotOperator;
+	private Robot robot;
 	
 	@Before
-	public void canInstantiateRobotOperator() throws Exception {
-		robotOperator = new RobotOperator();
+	public void setupRobotOperator() throws Exception {
+		robot = new Robot();
+		robotOperator = new RobotOperator(robot);
 	}
 	
 	@Test
@@ -32,7 +34,7 @@ public class RobotOperatorTest {
 	
 	@Test
 	public void robotOperatorMoveRobotNorthToX0Y1N() throws Exception {
-		Robot robot = createAndSetupRobot(Bearing.NORTH);
+		robot.setBearing(Bearing.NORTH);
 		
 		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
 
@@ -41,7 +43,7 @@ public class RobotOperatorTest {
 
 	@Test
 	public void robotOperatorMoveRobotEastToX1Y0E() throws Exception {
-		Robot robot = createAndSetupRobot(Bearing.EAST);
+		robot.setBearing(Bearing.EAST);
 		
 		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
 
@@ -50,7 +52,7 @@ public class RobotOperatorTest {
 
 	@Test
 	public void robotOperatorMoveRobotSouthToX0YN1S() throws Exception {
-		Robot robot = createAndSetupRobot(Bearing.SOUTH);
+		robot.setBearing(Bearing.SOUTH);
 		
 		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
 
@@ -59,7 +61,7 @@ public class RobotOperatorTest {
 
 	@Test
 	public void robotOperatorMoveRobotWestToXN1Y0W() throws Exception {
-		Robot robot = createAndSetupRobot(Bearing.WEST);
+		robot.setBearing(Bearing.WEST);
 		
 		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
 
@@ -78,13 +80,6 @@ public class RobotOperatorTest {
 		Robot robot = robotOperator.execute(RobotOperation.ROTATE_RIGHT);
 		
 		assertThat(robot.getBearing(), is(Bearing.EAST));
-	}
-	
-	private Robot createAndSetupRobot(Bearing bearing) {
-		Robot robot = new Robot(0, 0, bearing);
-		robotOperator.setRobot(robot);
-		
-		return robot;
 	}
 	
 	private static void assertThatRobotIsAt(Robot robot, Integer x, Integer y, Bearing bearing) {

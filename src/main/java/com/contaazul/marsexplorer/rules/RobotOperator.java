@@ -9,7 +9,11 @@ public class RobotOperator {
 	private Robot robot;
 	
 	public RobotOperator() {
-		robot = new Robot();
+		this(new Robot());
+	}
+	
+	public RobotOperator(Robot robot) {
+		this.robot = robot;
 	}
 	
 	public Robot execute(RobotOperation robotOperation) {

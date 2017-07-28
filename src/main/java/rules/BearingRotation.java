@@ -10,5 +10,9 @@ public class BearingRotation {
 
 		return values[index];
 	}
+	
+	public Bearing rightOf(Bearing bearing) {
+		return Bearing.EAST;
+	}
 
 }

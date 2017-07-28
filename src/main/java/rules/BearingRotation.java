@@ -12,6 +12,7 @@ public class BearingRotation {
 	}
 	
 	public Bearing rightOf(Bearing bearing) {
+		if (bearing == Bearing.EAST) return Bearing.SOUTH;
 		return Bearing.EAST;
 	}
 

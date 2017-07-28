@@ -2,12 +2,25 @@ package rules;
 
 import com.contaazul.marsexplorer.model.Robot;
 
+import enums.Bearing;
+import enums.RobotOperation;
+
 public class RobotOperator {
 	
 	private Robot robot;
 	
 	public RobotOperator() {
 		robot = new Robot();
+	}
+	
+	public Robot execute(RobotOperation robotOperation) {
+		if (robotOperation == RobotOperation.MOVE_FORWARD) {
+			if (robot.getBearing() == Bearing.NORTH) {
+				robot.setY(robot.getY() + 1);
+			}
+		}
+		
+		return robot;
 	}
 
 	public Robot getRobot() {

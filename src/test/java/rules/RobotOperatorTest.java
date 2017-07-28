@@ -7,6 +7,8 @@ import org.junit.*;
 
 import com.contaazul.marsexplorer.model.Robot;
 
+import enums.*;
+
 public class RobotOperatorTest {
 	private RobotOperator robotOperator;
 	
@@ -26,5 +28,17 @@ public class RobotOperatorTest {
 	@Test
 	public void robotOperatorHasRobotToOperate() throws Exception {
 		assertThat(robotOperator.getRobot(), is(not(nullValue())));
+	}
+	
+	@Test
+	public void robotOperatorMoveRobotNorthToX0Y1N() throws Exception {
+		Robot robot = new Robot(0, 0, Bearing.NORTH);
+		robotOperator.setRobot(robot);
+		
+		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
+
+		assertThat(robot.getX(), is(0));
+		assertThat(robot.getY(), is(1));
+		assertThat(robot.getBearing(), is(Bearing.NORTH));
 	}
 }

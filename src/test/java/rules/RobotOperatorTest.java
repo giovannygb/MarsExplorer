@@ -66,6 +66,13 @@ public class RobotOperatorTest {
 		assertThatRobotIsAt(robot, -1, 0, Bearing.WEST);
 	}
 	
+	@Test
+	public void robotOperatorRotateLeftToFaceWest() throws Exception {
+		Robot robot = robotOperator.execute(RobotOperation.ROTATE_LEFT);
+		
+		assertThat(robot.getBearing(), is(Bearing.WEST));
+	}
+	
 	private Robot createAndSetupRobot(Bearing bearing) {
 		Robot robot = new Robot(0, 0, bearing);
 		robotOperator.setRobot(robot);

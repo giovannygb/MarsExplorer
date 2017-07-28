@@ -1,5 +1,6 @@
 package enums;
 
 public enum RobotOperation {
-	MOVE_FORWARD
+	MOVE_FORWARD,
+	ROTATE_LEFT
 }

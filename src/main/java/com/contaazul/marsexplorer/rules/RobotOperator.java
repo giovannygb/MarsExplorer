@@ -1,9 +1,8 @@
-package rules;
+package com.contaazul.marsexplorer.rules;
 
+import com.contaazul.marsexplorer.enums.Bearing;
+import com.contaazul.marsexplorer.enums.RobotOperation;
 import com.contaazul.marsexplorer.model.Robot;
-
-import enums.Bearing;
-import enums.RobotOperation;
 
 public class RobotOperator {
 	

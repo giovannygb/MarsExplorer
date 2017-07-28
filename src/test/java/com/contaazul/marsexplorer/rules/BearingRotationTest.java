@@ -1,11 +1,12 @@
-package rules;
+package com.contaazul.marsexplorer.rules;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 import org.junit.*;
 
-import enums.Bearing;
+import com.contaazul.marsexplorer.enums.Bearing;
+import com.contaazul.marsexplorer.rules.BearingRotation;
 
 public class BearingRotationTest {
 	private BearingRotation bearingRotation;

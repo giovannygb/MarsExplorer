@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
-import enums.Bearing;
+import com.contaazul.marsexplorer.enums.Bearing;
 
 public class RobotTest {
 	private Robot robot;

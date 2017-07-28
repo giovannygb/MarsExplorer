@@ -1,13 +1,13 @@
-package rules;
+package com.contaazul.marsexplorer.rules;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 import org.junit.*;
 
+import com.contaazul.marsexplorer.enums.*;
 import com.contaazul.marsexplorer.model.Robot;
-
-import enums.*;
+import com.contaazul.marsexplorer.rules.RobotOperator;
 
 public class RobotOperatorTest {
 	private RobotOperator robotOperator;

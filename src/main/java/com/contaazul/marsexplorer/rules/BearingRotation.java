@@ -1,6 +1,6 @@
-package rules;
+package com.contaazul.marsexplorer.rules;
 
-import enums.Bearing;
+import com.contaazul.marsexplorer.enums.Bearing;
 
 public class BearingRotation {
 	

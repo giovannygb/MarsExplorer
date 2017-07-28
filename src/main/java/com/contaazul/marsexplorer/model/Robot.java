@@ -1,6 +1,6 @@
 package com.contaazul.marsexplorer.model;
 
-import enums.Bearing;
+import com.contaazul.marsexplorer.enums.Bearing;
 
 public class Robot {
 	private Integer x;

@@ -5,10 +5,10 @@ import enums.Bearing;
 public class BearingRotation {
 	
 	public Bearing leftOf(Bearing bearing) {
-		if (bearing == Bearing.WEST) return Bearing.SOUTH;
-		if (bearing == Bearing.SOUTH) return Bearing.EAST;
-		if (bearing == Bearing.EAST) return Bearing.NORTH;
-		return Bearing.WEST;
+		Bearing[] values = Bearing.values();
+		Integer index = (bearing.ordinal() + values.length - 1) % values.length;
+
+		return values[index];
 	}
 
 }

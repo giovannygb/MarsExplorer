@@ -43,4 +43,9 @@ public class BearingRotationTest {
 	public void rightOfEastIsSouth() throws Exception {
 		assertThat(bearingRotation.rightOf(Bearing.EAST), is(Bearing.SOUTH));
 	}
+	
+	@Test
+	public void rightOfSouthIsWest() throws Exception {
+		assertThat(bearingRotation.rightOf(Bearing.SOUTH), is(Bearing.WEST));
+	}
 }

@@ -9,6 +9,7 @@ import enums.Bearing;
 
 public class BearingRotationTest {
 	private BearingRotation bearingRotation;
+	
 	@Before
 	public void setupBearingRotation() throws Exception {
 		bearingRotation = new BearingRotation();

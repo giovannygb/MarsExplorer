@@ -73,6 +73,13 @@ public class RobotOperatorTest {
 		assertThat(robot.getBearing(), is(Bearing.WEST));
 	}
 	
+	@Test
+	public void robotOperatorRotateRightToFaceEast() throws Exception {
+		Robot robot = robotOperator.execute(RobotOperation.ROTATE_RIGHT);
+		
+		assertThat(robot.getBearing(), is(Bearing.EAST));
+	}
+	
 	private Robot createAndSetupRobot(Bearing bearing) {
 		Robot robot = new Robot(0, 0, bearing);
 		robotOperator.setRobot(robot);

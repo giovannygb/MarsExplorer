@@ -24,8 +24,10 @@ public class RobotOperator {
 			} else {
 				robot.setX(robot.getX() - 1);
 			}
-		} else {
+		} else if (robotOperation == RobotOperation.ROTATE_LEFT) {
 			robot.setBearing(new BearingRotation().leftOf(robot.getBearing()));
+		} else {
+			robot.setBearing(new BearingRotation().rightOf(robot.getBearing()));
 		}
 		
 		return robot;

@@ -18,4 +18,9 @@ public class BearingRotationTest {
 	public void leftOfNorthIsWest() throws Exception {
 		assertThat(bearingRotation.leftOf(Bearing.NORTH), is(Bearing.WEST));
 	}
+	
+	@Test
+	public void leftOfWestIsSouth() throws Exception {
+		assertThat(bearingRotation.leftOf(Bearing.WEST), is(Bearing.SOUTH));
+	}
 }

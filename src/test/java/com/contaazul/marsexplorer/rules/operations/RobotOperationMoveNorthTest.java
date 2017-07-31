@@ -14,7 +14,7 @@ public class RobotOperationMoveNorthTest {
 	private Robot robot;
 	
 	@Before
-	public void testName() throws Exception {
+	public void setupRobotOperationMoveNorth() throws Exception {
 		robotOperationMoveNorth = new RobotOperationMoveNorth();
 		robot = new Robot();
 	}

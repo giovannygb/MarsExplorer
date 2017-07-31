@@ -16,6 +16,6 @@ public class Terrain {
 	}
 	
 	public boolean within(Robot robot) {
-		return widthBoundary.within(robot.getX());
+		return widthBoundary.within(robot.getX()) && heightBoundary.within(robot.getY());
 	}
 }

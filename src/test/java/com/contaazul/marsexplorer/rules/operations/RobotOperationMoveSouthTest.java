@@ -20,7 +20,7 @@ public class RobotOperationMoveSouthTest {
 	}
 	
 	@Test
-	public void moveRobotEastToX1Y0E() throws Exception {
+	public void moveRobotSouthToX0YN1S() throws Exception {
 		robot = robotOperationMoveSouth.execute(robot);
 
 		assertThatRobotIsAt(robot, 0, -1, Bearing.SOUTH);

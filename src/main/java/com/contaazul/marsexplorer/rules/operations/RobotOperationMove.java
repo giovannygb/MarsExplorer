@@ -12,9 +12,7 @@ public class RobotOperationMove implements RobotOperation {
 		} else if (robot.getBearing() == Bearing.SOUTH) {
 			return new RobotOperationMoveSouth().execute(robot);
 		} else {
-			robot.setX(robot.getX() - 1);
+			return new RobotOperationMoveWest().execute(robot);
 		}
-		
-		return robot;
 	}
 }

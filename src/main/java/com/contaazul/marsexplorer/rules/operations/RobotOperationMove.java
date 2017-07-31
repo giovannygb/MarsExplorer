@@ -8,7 +8,7 @@ public class RobotOperationMove implements RobotOperation {
 		if (robot.getBearing() == Bearing.NORTH) {
 			return new RobotOperationMoveNorth().execute(robot);
 		} else if (robot.getBearing() == Bearing.EAST) {
-			robot.setX(robot.getX() + 1);
+			return new RobotOperationMoveEast().execute(robot);
 		} else if (robot.getBearing() == Bearing.SOUTH) {
 			robot.setY(robot.getY() - 1);
 		} else {

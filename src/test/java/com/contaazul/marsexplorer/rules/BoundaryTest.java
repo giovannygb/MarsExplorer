@@ -29,18 +29,17 @@ public class BoundaryTest {
 	}
 
 	@Test
-	public void ZeroShouldBeWithinBounds() throws Exception {
+	public void zeroShouldBeWithinBounds() throws Exception {
 		assertThat(boundary.within(0), is(true));
 	}
 	
-
 	@Test
-	public void FiveShouldBeWithinBounds() throws Exception {
+	public void fiveShouldBeWithinBounds() throws Exception {
 		assertThat(boundary.within(5), is(true));
 	}
 	
 	@Test
-	public void SixShouldBeOutOfBounds() throws Exception {
+	public void sixShouldBeOutOfBounds() throws Exception {
 		assertThat(boundary.within(6), is(false));
 	}
 	

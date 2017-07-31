@@ -3,6 +3,7 @@ package com.contaazul.marsexplorer.rules;
 import com.contaazul.marsexplorer.enums.RobotOperation;
 import com.contaazul.marsexplorer.model.Robot;
 import com.contaazul.marsexplorer.rules.operations.RobotOperationMove;
+import com.contaazul.marsexplorer.rules.operations.RobotOperationRotateLeft;
 
 public class RobotOperator {
 	
@@ -20,7 +21,7 @@ public class RobotOperator {
 		if (robotOperation == RobotOperation.MOVE_FORWARD) {
 			robot = new RobotOperationMove().execute(robot);
 		} else if (robotOperation == RobotOperation.ROTATE_LEFT) {
-			robot.setBearing(new BearingRotation().leftOf(robot.getBearing()));
+			robot = new RobotOperationRotateLeft().execute(robot);
 		} else {
 			robot.setBearing(new BearingRotation().rightOf(robot.getBearing()));
 		}

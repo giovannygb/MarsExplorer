@@ -22,4 +22,11 @@ public class TerrainTest {
 	public void robotAt00ShouldBeWithinBounds() throws Exception {
 		assertThat(terrain.within(robot), is(true));
 	}
+	
+	@Test
+	public void robotAtN10ShouldBeOutOfBounds() throws Exception {
+		robot.setX(-1);
+		
+		assertThat(terrain.within(robot), is(false));
+	}
 }

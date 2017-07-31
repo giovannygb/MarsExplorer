@@ -1,5 +1,20 @@
 package com.contaazul.marsexplorer.rules.operations;
 
-public class RobotOperationMove {
+import com.contaazul.marsexplorer.enums.Bearing;
+import com.contaazul.marsexplorer.model.Robot;
 
+public class RobotOperationMove {
+	public Robot execute(Robot robot) {
+		if (robot.getBearing() == Bearing.NORTH) {
+			robot.setY(robot.getY() + 1);
+		} else if (robot.getBearing() == Bearing.EAST) {
+			robot.setX(robot.getX() + 1);
+		} else if (robot.getBearing() == Bearing.SOUTH) {
+			robot.setY(robot.getY() - 1);
+		} else {
+			robot.setX(robot.getX() - 1);
+		}
+		
+		return robot;
+	}
 }

@@ -43,4 +43,9 @@ public class BoundaryTest {
 	public void SixShouldBeOutOfBounds() throws Exception {
 		assertThat(boundary.within(6), is(false));
 	}
+	
+	@Test
+	public void negOneShouldBeOutOfBounds() throws Exception {
+		assertThat(boundary.within(-1), is(false));
+	}
 }

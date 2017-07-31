@@ -3,7 +3,7 @@ package com.contaazul.marsexplorer.rules.operations;
 import com.contaazul.marsexplorer.enums.Bearing;
 import com.contaazul.marsexplorer.model.Robot;
 
-public class RobotOperationMove {
+public class RobotOperationMove implements RobotOperation {
 	public Robot execute(Robot robot) {
 		if (robot.getBearing() == Bearing.NORTH) {
 			robot.setY(robot.getY() + 1);

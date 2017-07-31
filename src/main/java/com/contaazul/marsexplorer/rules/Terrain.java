@@ -1,5 +1,7 @@
 package com.contaazul.marsexplorer.rules;
 
+import com.contaazul.marsexplorer.model.Robot;
+
 public class Terrain {
 	private Boundary widthBoundary;
 	private Boundary heightBoundary;
@@ -11,5 +13,9 @@ public class Terrain {
 	public Terrain(Boundary widthBoundary, Boundary heightBoundary) {
 		this.widthBoundary = widthBoundary;
 		this.heightBoundary = heightBoundary;
+	}
+	
+	public boolean within(Robot robot) {
+		return true;
 	}
 }

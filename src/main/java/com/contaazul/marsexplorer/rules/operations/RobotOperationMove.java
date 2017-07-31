@@ -6,7 +6,7 @@ import com.contaazul.marsexplorer.model.Robot;
 public class RobotOperationMove implements RobotOperation {
 	public Robot execute(Robot robot) {
 		if (robot.getBearing() == Bearing.NORTH) {
-			robot.setY(robot.getY() + 1);
+			return new RobotOperationMoveNorth().execute(robot);
 		} else if (robot.getBearing() == Bearing.EAST) {
 			robot.setX(robot.getX() + 1);
 		} else if (robot.getBearing() == Bearing.SOUTH) {

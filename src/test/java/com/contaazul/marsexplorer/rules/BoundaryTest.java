@@ -27,9 +27,15 @@ public class BoundaryTest {
 		
 		assertThat(boundary.getMax(), is(1));
 	}
-	
+
 	@Test
 	public void ZeroShouldBeWithinBounds() throws Exception {
 		assertThat(boundary.within(0), is(true));
+	}
+	
+
+	@Test
+	public void FiveShouldBeWithinBounds() throws Exception {
+		assertThat(boundary.within(5), is(true));
 	}
 }

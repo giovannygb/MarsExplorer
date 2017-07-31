@@ -32,7 +32,7 @@ public class TerrainTest {
 	
 	@Test
 	public void robotAt60ShouldBeOutOfBounds() throws Exception {
-		robot.setX(-1);
+		robot.setX(6);
 		
 		assertThat(terrain.within(robot), is(false));
 	}

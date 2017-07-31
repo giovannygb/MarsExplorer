@@ -27,6 +27,6 @@ public class Boundary {
 	}
 	
 	public boolean within(Integer value) {
-		return value >= min;
+		return value >= min && value <= max;
 	}
 }

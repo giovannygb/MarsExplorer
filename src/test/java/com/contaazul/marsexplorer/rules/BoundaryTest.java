@@ -27,4 +27,9 @@ public class BoundaryTest {
 		
 		assertThat(boundary.getMax(), is(1));
 	}
+	
+	@Test
+	public void ZeroShouldBeWithinBounds() throws Exception {
+		assertThat(boundary.within(0), is(true));
+	}
 }

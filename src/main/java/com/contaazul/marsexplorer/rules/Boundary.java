@@ -25,4 +25,8 @@ public class Boundary {
 	public void setMax(Integer max) {
 		this.max = max;
 	}
+	
+	public boolean within(Integer value) {
+		return value >= min;
+	}
 }

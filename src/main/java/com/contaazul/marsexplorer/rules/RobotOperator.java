@@ -1,6 +1,6 @@
 package com.contaazul.marsexplorer.rules;
 
-import com.contaazul.marsexplorer.enums.RobotOperation;
+import com.contaazul.marsexplorer.enums.RobotCommand;
 import com.contaazul.marsexplorer.model.Robot;
 import com.contaazul.marsexplorer.rules.operations.RobotOperationMove;
 import com.contaazul.marsexplorer.rules.operations.RobotOperationRotateLeft;
@@ -18,10 +18,10 @@ public class RobotOperator {
 		this.robot = robot;
 	}
 	
-	public Robot execute(RobotOperation robotOperation) {
-		if (robotOperation == RobotOperation.MOVE_FORWARD) {
+	public Robot execute(RobotCommand robotOperation) {
+		if (robotOperation == RobotCommand.MOVE_FORWARD) {
 			robot = new RobotOperationMove().execute(robot);
-		} else if (robotOperation == RobotOperation.ROTATE_LEFT) {
+		} else if (robotOperation == RobotCommand.ROTATE_LEFT) {
 			robot = new RobotOperationRotateLeft().execute(robot);
 		} else {
 			robot = new RobotOperationRotateRight().execute(robot);

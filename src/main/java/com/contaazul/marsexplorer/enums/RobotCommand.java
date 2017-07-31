@@ -1,6 +1,6 @@
 package com.contaazul.marsexplorer.enums;
 
-public enum RobotOperation {
+public enum RobotCommand {
 	MOVE_FORWARD,
 	ROTATE_LEFT,
 	ROTATE_RIGHT

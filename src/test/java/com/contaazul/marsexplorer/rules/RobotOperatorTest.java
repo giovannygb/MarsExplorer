@@ -36,7 +36,7 @@ public class RobotOperatorTest {
 	public void robotOperatorMoveRobotNorthToX0Y1N() throws Exception {
 		robot.setBearing(Bearing.NORTH);
 		
-		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
+		robot = robotOperator.execute(RobotCommand.MOVE_FORWARD);
 
 		assertThatRobotIsAt(robot, 0, 1, Bearing.NORTH);
 	}
@@ -45,7 +45,7 @@ public class RobotOperatorTest {
 	public void robotOperatorMoveRobotEastToX1Y0E() throws Exception {
 		robot.setBearing(Bearing.EAST);
 		
-		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
+		robot = robotOperator.execute(RobotCommand.MOVE_FORWARD);
 
 		assertThatRobotIsAt(robot, 1, 0, Bearing.EAST);
 	}
@@ -54,7 +54,7 @@ public class RobotOperatorTest {
 	public void robotOperatorMoveRobotSouthToX0YN1S() throws Exception {
 		robot.setBearing(Bearing.SOUTH);
 		
-		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
+		robot = robotOperator.execute(RobotCommand.MOVE_FORWARD);
 
 		assertThatRobotIsAt(robot, 0, -1, Bearing.SOUTH);
 	}
@@ -63,21 +63,21 @@ public class RobotOperatorTest {
 	public void robotOperatorMoveRobotWestToXN1Y0W() throws Exception {
 		robot.setBearing(Bearing.WEST);
 		
-		robot = robotOperator.execute(RobotOperation.MOVE_FORWARD);
+		robot = robotOperator.execute(RobotCommand.MOVE_FORWARD);
 
 		assertThatRobotIsAt(robot, -1, 0, Bearing.WEST);
 	}
 	
 	@Test
 	public void robotOperatorRotateLeftToFaceWest() throws Exception {
-		Robot robot = robotOperator.execute(RobotOperation.ROTATE_LEFT);
+		Robot robot = robotOperator.execute(RobotCommand.ROTATE_LEFT);
 		
 		assertThat(robot.getBearing(), is(Bearing.WEST));
 	}
 	
 	@Test
 	public void robotOperatorRotateRightToFaceEast() throws Exception {
-		Robot robot = robotOperator.execute(RobotOperation.ROTATE_RIGHT);
+		Robot robot = robotOperator.execute(RobotCommand.ROTATE_RIGHT);
 		
 		assertThat(robot.getBearing(), is(Bearing.EAST));
 	}

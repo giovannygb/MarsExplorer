@@ -4,6 +4,7 @@ import com.contaazul.marsexplorer.enums.RobotOperation;
 import com.contaazul.marsexplorer.model.Robot;
 import com.contaazul.marsexplorer.rules.operations.RobotOperationMove;
 import com.contaazul.marsexplorer.rules.operations.RobotOperationRotateLeft;
+import com.contaazul.marsexplorer.rules.operations.RobotOperationRotateRight;
 
 public class RobotOperator {
 	
@@ -23,7 +24,7 @@ public class RobotOperator {
 		} else if (robotOperation == RobotOperation.ROTATE_LEFT) {
 			robot = new RobotOperationRotateLeft().execute(robot);
 		} else {
-			robot.setBearing(new BearingRotation().rightOf(robot.getBearing()));
+			robot = new RobotOperationRotateRight().execute(robot);
 		}
 		
 		return robot;

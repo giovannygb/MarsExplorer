@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.contaazul.marsexplorer.enums.RobotCommand;
 import com.contaazul.marsexplorer.exceptions.InvalidRobotOperationException;
+import com.contaazul.marsexplorer.exceptions.RobotOutOfBoundsException;
 import com.contaazul.marsexplorer.model.Robot;
 import com.contaazul.marsexplorer.rules.RobotOperator;
 import com.contaazul.marsexplorer.rules.Terrain;
@@ -40,13 +41,11 @@ public class RobotOperatorService {
 	
 	public Robot execute(Robot robot, RobotCommand robotCommand) {
 		if (robotCommand == null) throw new InvalidRobotOperationException();
-		
 		RobotOperator robotOperator = new RobotOperator(robot);
-		Terrain terrain = new Terrain(5, 5);
-		
 		robotOperator.execute(robotCommand);
-		
-		if (!terrain.within(robot)) throw new RuntimeException();
+
+		Terrain terrain = new Terrain(5, 5);
+		if (!terrain.within(robot)) throw new RobotOutOfBoundsException();
 		
 		return robot;
 	}

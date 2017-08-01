@@ -53,10 +53,14 @@ public class RobotOperationMoveTest {
 
 		assertThatRobotIsAt(robot, -1, 0, Bearing.WEST);
 	}
-	
+
 	public static void assertThatRobotIsAt(Robot robot, Integer x, Integer y, Bearing bearing) {
+		assertThatRobotIsAt(robot, x, y);
+		assertThat(robot.getBearing(), is(bearing));
+	}
+	
+	public static void assertThatRobotIsAt(Robot robot, Integer x, Integer y) {
 		assertThat(robot.getX(), is(x));
 		assertThat(robot.getY(), is(y));
-		assertThat(robot.getBearing(), is(bearing));
 	}
 }

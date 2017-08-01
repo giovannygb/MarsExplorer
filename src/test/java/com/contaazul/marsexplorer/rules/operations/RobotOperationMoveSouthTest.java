@@ -13,13 +13,13 @@ public class RobotOperationMoveSouthTest {
 	@Before
 	public void setupRobotOperationMoveSouth() throws Exception {
 		robotOperationMoveSouth = new RobotOperationMoveSouth();
-		robot = new Robot(0, 0, Bearing.SOUTH);
+		robot = new Robot();
 	}
 	
 	@Test
 	public void moveRobotSouthToX0YN1S() throws Exception {
 		robot = robotOperationMoveSouth.execute(robot);
 
-		RobotOperationMoveTest.assertThatRobotIsAt(robot, 0, -1, Bearing.SOUTH);
+		RobotOperationMoveTest.assertThatRobotIsAt(robot, 0, -1);
 	}
 }

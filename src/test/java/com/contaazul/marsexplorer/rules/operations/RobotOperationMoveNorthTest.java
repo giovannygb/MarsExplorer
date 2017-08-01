@@ -18,10 +18,8 @@ public class RobotOperationMoveNorthTest {
 	
 	@Test
 	public void moveRobotNorthToX0Y1N() throws Exception {
-			robot.setBearing(Bearing.NORTH);
-			
 			robot = robotOperationMoveNorth.execute(robot);
 
-			RobotOperationMoveTest.assertThatRobotIsAt(robot, 0, 1, Bearing.NORTH);
+			RobotOperationMoveTest.assertThatRobotIsAt(robot, 0, 1);
 	}
 }

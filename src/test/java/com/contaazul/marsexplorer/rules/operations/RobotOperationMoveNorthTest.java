@@ -1,8 +1,5 @@
 package com.contaazul.marsexplorer.rules.operations;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,12 +22,6 @@ public class RobotOperationMoveNorthTest {
 			
 			robot = robotOperationMoveNorth.execute(robot);
 
-			assertThatRobotIsAt(robot, 0, 1, Bearing.NORTH);
-	}
-	
-	private static void assertThatRobotIsAt(Robot robot, Integer x, Integer y, Bearing bearing) {
-		assertThat(robot.getX(), is(x));
-		assertThat(robot.getY(), is(y));
-		assertThat(robot.getBearing(), is(bearing));
+			RobotOperationMoveTest.assertThatRobotIsAt(robot, 0, 1, Bearing.NORTH);
 	}
 }

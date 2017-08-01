@@ -13,14 +13,6 @@ public class RobotPrinter {
 		this.format = format;
 	}
 
-	public Robot getRobot() {
-		return robot;
-	}
-
-	public void setRobot(Robot robot) {
-		this.robot = robot;
-	}
-
 	@Override
 	public String toString() {
 		return String.format(format, robot.getX(), robot.getY(), robot.getBearing());

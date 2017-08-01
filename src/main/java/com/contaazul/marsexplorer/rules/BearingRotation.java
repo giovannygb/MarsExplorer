@@ -12,7 +12,7 @@ public class BearingRotation {
 		return rotate(bearing, 1);
 	}
 	
-	public Bearing rotate(Bearing bearing, Integer offset) {
+	private Bearing rotate(Bearing bearing, Integer offset) {
 		Bearing[] values = Bearing.values();
 		Integer index = (bearing.ordinal() + values.length + offset) % values.length;
 

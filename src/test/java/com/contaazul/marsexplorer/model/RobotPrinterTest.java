@@ -19,6 +19,7 @@ public class RobotPrinterTest {
 	
 	@Test
 	public void robotNorthShouldBe00N() throws Exception {
+		robot.setBearing(Bearing.NORTH);
 		assertThat(robotPrinter.toString(), is("(0, 0, N)"));
 	}
 	

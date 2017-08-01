@@ -16,10 +16,6 @@ public class RobotOperator {
 	private Robot robot;
 	private Map<RobotCommand, RobotOperation> robotOperations;
 	
-	public RobotOperator() {
-		this(new Robot());
-	}
-	
 	public RobotOperator(Robot robot) {
 		this.robot = robot;
 		

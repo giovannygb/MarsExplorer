@@ -5,12 +5,14 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
+import com.contaazul.marsexplorer.service.RobotOperatorService;
+
 public class RobotControllerTest {
 	private RobotController robotController;
 	
 	@Before
 	public void setupRobotController() throws Exception {
-		robotController = new RobotController();
+		robotController = new RobotController(new RobotOperatorService());
 	}
 	
 	@Test

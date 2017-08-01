@@ -22,6 +22,6 @@ public class RobotController {
 	public String execute(@PathVariable String command) {
 		Robot robot = robotOperatorService.execute(command);
 		
-		return String.format("(%d, %d, N)", robot.getX(), robot.getY());
+		return String.format("(%d, %d, %.1s)", robot.getX(), robot.getY(), robot.getBearing());
 	}
 }

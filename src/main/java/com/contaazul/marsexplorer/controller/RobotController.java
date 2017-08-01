@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.contaazul.marsexplorer.model.Robot;
+import com.contaazul.marsexplorer.model.RobotPrinter;
 import com.contaazul.marsexplorer.service.RobotOperatorService;
 
 @RestController
@@ -22,6 +23,6 @@ public class RobotController {
 	public String execute(@PathVariable String command) {
 		Robot robot = robotOperatorService.execute(command);
 		
-		return String.format("(%d, %d, %.1s)", robot.getX(), robot.getY(), robot.getBearing());
+		return new RobotPrinter(robot).toString();
 	}
 }

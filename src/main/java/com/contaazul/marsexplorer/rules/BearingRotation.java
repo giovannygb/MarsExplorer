@@ -5,15 +5,16 @@ import com.contaazul.marsexplorer.enums.Bearing;
 public class BearingRotation {
 	
 	public Bearing leftOf(Bearing bearing) {
-		Bearing[] values = Bearing.values();
-		Integer index = (bearing.ordinal() + values.length - 1) % values.length;
-
-		return values[index];
+		return rotate(bearing, -1);
 	}
 	
 	public Bearing rightOf(Bearing bearing) {
+		return rotate(bearing, 1);
+	}
+	
+	public Bearing rotate(Bearing bearing, Integer offset) {
 		Bearing[] values = Bearing.values();
-		Integer index = (bearing.ordinal() + 1) % values.length;
+		Integer index = (bearing.ordinal() + values.length + offset) % values.length;
 
 		return values[index];
 	}

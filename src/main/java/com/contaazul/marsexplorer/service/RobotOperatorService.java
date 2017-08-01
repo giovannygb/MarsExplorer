@@ -42,6 +42,7 @@ public class RobotOperatorService {
 		
 		RobotOperator robotOperator = new RobotOperator(robot);
 		Terrain terrain = new Terrain(5, 5);
+		
 		robotOperator.execute(robotCommand);
 		
 		if (!terrain.within(robot)) throw new RuntimeException();

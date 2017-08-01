@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.contaazul.marsexplorer.enums.Bearing;
+import com.contaazul.marsexplorer.exceptions.InvalidRobotOperationException;
 import com.contaazul.marsexplorer.model.Robot;
-import com.contaazul.marsexplorer.rules.operations.RobotOperationMove;
 import com.contaazul.marsexplorer.rules.operations.RobotOperationMoveTest;
 
 public class RobotOperatorServiceTest {
@@ -26,5 +26,10 @@ public class RobotOperatorServiceTest {
 		Robot robot = robotOperatorService.execute("M");
 		
 		RobotOperationMoveTest.assertThatRobotIsAt(robot, 0, 1, Bearing.NORTH);
+	}
+	
+	@Test(expected=InvalidRobotOperationException.class)
+	public void cantSendInvalidOperation() throws RuntimeException {
+		robotOperatorService.execute("X");
 	}
 }

@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.contaazul.marsexplorer.enums.RobotCommand;
+import com.contaazul.marsexplorer.exceptions.InvalidRobotOperationException;
 import com.contaazul.marsexplorer.model.Robot;
 import com.contaazul.marsexplorer.rules.RobotOperator;
 import com.contaazul.marsexplorer.rules.Terrain;
@@ -38,7 +39,7 @@ public class RobotOperatorService {
 	}
 	
 	public Robot execute(Robot robot, RobotCommand robotCommand) {
-		if (robotCommand == null) throw new RuntimeException();
+		if (robotCommand == null) throw new InvalidRobotOperationException();
 		
 		RobotOperator robotOperator = new RobotOperator(robot);
 		Terrain terrain = new Terrain(5, 5);

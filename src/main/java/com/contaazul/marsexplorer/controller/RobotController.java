@@ -19,7 +19,7 @@ public class RobotController {
 		this.robotOperatorService = robotOperatorService;
 	}
 
-	@RequestMapping("/mars/{command}")
+	@PostMapping("/mars/{command}")
 	public String execute(@PathVariable String command) {
 		Robot robot = robotOperatorService.execute(command);
 		

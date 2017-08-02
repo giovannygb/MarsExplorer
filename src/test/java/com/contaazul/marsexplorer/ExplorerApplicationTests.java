@@ -1,16 +1,21 @@
 package com.contaazul.marsexplorer;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+import org.junit.Rule;
+import org.junit.Test;
+import org.springframework.boot.test.rule.OutputCapture;
+
 public class ExplorerApplicationTests {
+	@Rule
+	public OutputCapture outputCapture = new OutputCapture();
+
+	private static final String SPRING_STARTUP = "root of context hierarchy";
 
 	@Test
-	public void contextLoads() {
+	public void shouldInitApplication() throws Exception {
+		ExplorerApplication.main(new String[] {});
+		assertThat(this.outputCapture.toString().contains(SPRING_STARTUP), is(true));
 	}
-
 }

@@ -10,7 +10,7 @@ Exemplo: Se o robô está na posição (0,0,N), o comando "MML" fará ele chegar
 
 Escreva um programa que permita aos engenheiros da NASA enviar comandos para o Robô e saber onde ele se encontra. Os engenheiros irão rodar testes no seu software para garantir que ele se comporta da forma esperada, antes de enviar o Robô para marte.
 
-# Requisitos
+## Requisitos
 
 O terreno deverá ser iniciado com 5x5 posições;
 O robô inicia na coordenada (0,0,N);
@@ -18,7 +18,7 @@ Deverá ser possível enviar um comando para o Robô que me retorne a posição 
 O Robô não pode se movimentar para fora da área especificada;
 Não deve guardar estado do robô para consulta posterior;
 
-# Cenários de teste
+## Cenários de teste
 | Comando | Saída |
 | --- | --- |
 | `curl -s --request POST http://localhost:8080/rest/mars/MMRMMRMM` | (2, 0, S) |
@@ -26,6 +26,6 @@ Não deve guardar estado do robô para consulta posterior;
 | `curl -s --request POST http://localhost:8080/rest/mars/AAA` | 400 Bad Request |
 | `curl -s --request POST http://localhost:8080/rest/mars/MMMMMMMMMMMMMMMMMMMMMMMM` | 400 Bad Request |
 
-# Ambiente
+## Ambiente
 
 Disponível no Heroku: https://glacial-inlet-86120.herokuapp.com/rest/mars

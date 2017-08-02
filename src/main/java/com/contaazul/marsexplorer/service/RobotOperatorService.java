@@ -41,12 +41,19 @@ public class RobotOperatorService {
 	
 	public Robot execute(Robot robot, RobotCommand robotCommand) {
 		if (robotCommand == null) throw new InvalidRobotOperationException();
-		RobotOperator robotOperator = new RobotOperator(robot);
-		robotOperator.execute(robotCommand);
-
-		Terrain terrain = new Terrain(5, 5);
-		if (!terrain.within(robot)) throw new RobotOutOfBoundsException();
+		robot = moveRobot(robot, robotCommand);
+		validateRobotWithinTerain(robot);
 		
 		return robot;
+	}
+	
+	private Robot moveRobot(Robot robot, RobotCommand robotCommand) {
+		RobotOperator robotOperator = new RobotOperator(robot);
+		return robotOperator.execute(robotCommand);
+	}
+	
+	private void validateRobotWithinTerain(Robot robot) {
+		Terrain terrain = new Terrain(5, 5);
+		if (!terrain.within(robot)) throw new RobotOutOfBoundsException();
 	}
 }

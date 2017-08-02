@@ -30,10 +30,10 @@ public class RobotOperatorService {
 	}
 	
 	public Robot execute(Robot robot, RobotCommand robotCommand) {
-		robot = moveRobot(robot, robotCommand);
-		validateRobotWithinTerain(robot);
+		Robot movedRobot = moveRobot(robot, robotCommand);
+		validateRobotWithinTerain(movedRobot);
 		
-		return robot;
+		return movedRobot;
 	}
 	
 	private Robot moveRobot(Robot robot, RobotCommand robotCommand) {

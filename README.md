@@ -1,4 +1,5 @@
 # Mars Explorer
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e80fdb9d203c48c49e70234bc8652064)](https://www.codacy.com/app/giovannygb/MarsExplorer?utm_source=github.com&utm_medium=referral&utm_content=giovannygb/MarsExplorer&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/giovannygb/MarsExplorer.svg?branch=master)](https://travis-ci.org/giovannygb/MarsExplorer)
 
 Um time de robôs devem ser colocados pela NASA para explorar um terreno em Marte.
